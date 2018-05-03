@@ -18,7 +18,7 @@ public class Dart : ProjectileTemplate {
     }
 
     public override void SetParameters() {
-        movementSpeed -= (movementSpeed / 10) * Time.deltaTime; //Decreases Speed over time;
+        movementSpeed -= (movementSpeed / speedDecreaseAmount) * Time.deltaTime; //Decreases Speed over time;
 
         if(target == null)
         base.SetParameters(); //Behaves as a regular bullet if no target is assigned;

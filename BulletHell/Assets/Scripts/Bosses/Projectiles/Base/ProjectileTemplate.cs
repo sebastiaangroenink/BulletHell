@@ -11,7 +11,7 @@ public class ProjectileTemplate : MonoBehaviour {
     public float movementSpeed = 1.5f;
     public Vector3 rotation;
 
-    public virtual void Awake() { //Sets some base variables for possible modification options;
+    public virtual void Start() { //Sets some base variables for possible modification options;
         rotation.z = forwardAxis;
     }
 

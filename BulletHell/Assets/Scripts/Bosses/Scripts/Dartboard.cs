@@ -4,17 +4,48 @@ using UnityEngine;
 
 public class Dartboard : BossTemplate {
 
-    private float nextAngle = 0;
+    public Transform target;
 
-	public override void BaseAttack() {
+    [Header("Big Dart Settings:")]
+    public float bigdartTimerInterval = 20;
+
+    [Header("Angle Settings:")]
+    public float angleAdjustment = 15;
+
+    #region Private Variables
+    private float bigdartTimer = 20;
+    private float nextAngle = 0;
+    private bool canshootBigdart;
+    #endregion
+
+    public override void BaseAttack() {
         base.BaseAttack();
 
         if (cooledDown) {
-            GameObject projectileObj = Instantiate(projectiles[0], gameObject.transform.position, Quaternion.identity);
-            projectileObj.transform.SetParent(UIManager.uimanager.canvas.transform);
-            ProjectileTemplate projectile = projectileObj.GetComponent<ProjectileTemplate>();
-            projectile.forwardAxis = nextAngle;
-            nextAngle += 5;
+            GameObject projectile = Instantiate(projectiles[0].gameObject, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);    
+            projectile.GetComponent<ProjectileTemplate>().forwardAxis = nextAngle;
+            nextAngle += angleAdjustment;
         }
+
+        canshootBigdart = CanShootBigDart();
+
+        if (canshootBigdart) {
+            GameObject bigProjectile = Instantiate(projectiles[1].gameObject, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
+            bigProjectile.GetComponent<Dart>().forwardAxis = nextAngle;
+            bigProjectile.GetComponent<Dart>().target = target;
+            nextAngle += angleAdjustment;
+        }
+    }
+
+    private bool CanShootBigDart() {
+        bigdartTimer -= Time.deltaTime;
+
+        if(bigdartTimer <= 0) 
+        {
+            bigdartTimer = bigdartTimerInterval;
+            return true;
+        }
+
+        return false;
     }
 }
