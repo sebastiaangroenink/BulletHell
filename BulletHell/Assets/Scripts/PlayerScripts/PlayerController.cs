@@ -28,9 +28,6 @@ public class PlayerController : MonoBehaviour
 
     public int bulletsOnScreen;
 
-    //temp var
-    public float decayTimer;
-
     private void Awake()
     {
         cam = Camera.main;       
@@ -94,13 +91,12 @@ public class PlayerController : MonoBehaviour
             case BulletType.One:
                 maxBullets = 20;
                 volleyCount = 5;
-                bulletSpeed = 18;
+                bulletSpeed = 30;
                 bulletDamage = 1;
-                decayTimer = 3.0f;
                 bulletAngle = 22.5f;
                 baseAngle = -45;
 
-                if(bulletsOnScreen < maxBullets-volleyCount && bulletCooldown <0)
+                if(bulletsOnScreen <= maxBullets-volleyCount && bulletCooldown <0)
                 {
                     for(int i =0; i<volleyCount; i++)
                     {
@@ -108,10 +104,9 @@ public class PlayerController : MonoBehaviour
                         bulletInstance = Instantiate(bulletTypes[0], transform.position,new Quaternion(+baseAngle + (bulletAngle * i), 180,0,0)) as GameObject;
                         bulletInstance.GetComponent<PlayerBullets>().damage = bulletDamage;
                         bulletInstance.GetComponent<PlayerBullets>().speed = bulletSpeed;
-                        bulletInstance.GetComponent<PlayerBullets>().decay = decayTimer;
                         bulletsOnScreen++;
                     }
-                    bulletCooldown = 0.4f;
+                    bulletCooldown = 0.1f;
                 }
 
 

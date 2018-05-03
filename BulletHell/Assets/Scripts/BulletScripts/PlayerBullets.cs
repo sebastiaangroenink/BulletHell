@@ -7,7 +7,7 @@ public class PlayerBullets : MonoBehaviour
 
     public float damage;
     public float speed = 1.0f;
-    public float decay;
+    public float safetyDecay = 5.0f;
 
     public GameObject player;
 
@@ -19,26 +19,27 @@ public class PlayerBullets : MonoBehaviour
     private void Update()
     {
         transform.Translate(0, speed * Time.deltaTime, 0);
+        safetyDecay -= 1 * Time.deltaTime;
 
-        //temp code
-        decay -= 1 * Time.deltaTime;
-
-        //temp code
-        if (decay < 0)
+        if (safetyDecay < 0)
         {
             Destroy(transform.gameObject);
-            player.GetComponent<PlayerController>().bulletsOnScreen--;
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.gameObject.tag == "Boss")
         {
             collision.transform.GetComponent<BossTemplate>().health -= damage;
+            player.GetComponent<PlayerController>().bulletsOnScreen--;
+            Destroy(transform.gameObject);
 
         }
-        Destroy(transform.gameObject);
-        player.GetComponent<PlayerController>().bulletsOnScreen--;
+        if (collision.transform.gameObject.tag == "Wall")
+        {
+            Destroy(transform.gameObject);
+            player.GetComponent<PlayerController>().bulletsOnScreen--;
+        }
     }
 }
