@@ -19,6 +19,7 @@ public class BossTemplate : MonoBehaviour {
 
     #region Private Variables
     private float attackTimer = 0.5f; //Actual timer;
+    protected bool cooledDown;
     #endregion
 
     public virtual void Update() {
@@ -40,10 +41,7 @@ public class BossTemplate : MonoBehaviour {
 
 
     public virtual void BaseAttack() {
-        bool canAttack = CoolDown();
-
-        if (canAttack) //Checks if the timer is less or equal then 0;
-            return; //Else cuts off function;
+        cooledDown = CoolDown();
 
     }
 }

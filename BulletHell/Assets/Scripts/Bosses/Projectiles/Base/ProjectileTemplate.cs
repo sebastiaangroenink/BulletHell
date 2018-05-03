@@ -15,7 +15,7 @@ public class ProjectileTemplate : MonoBehaviour {
         rotation.z = forwardAxis;
     }
 
-    public void SetParameters() {
+    public virtual void SetParameters() {
         transform.eulerAngles = rotation; //Sets the Z axis based on the forward given;
     }
 

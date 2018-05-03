@@ -7,19 +7,26 @@ using UnityEngine;
 
 public class Dart : ProjectileTemplate {
 
-    [Header("Behaviour:")]
-    public Transform target;
-    public float baseMovementSpeed = 2;
-    public float rotationSpeed;
+    [Header("Dart Properties:")]
+    public Transform target; //End goal;
+    public float rotationSpeed; //Speed at which it rotates towards its target;
+    public float speedDecreaseAmount = 1; //Speed decreased over time;
         
     public override void Update() {
         base.Update();
         Tracking();
     }
 
-    public void Tracking() {
+    public override void SetParameters() {
+        movementSpeed -= (movementSpeed / 10) * Time.deltaTime; //Decreases Speed over time;
+
+        if(target == null)
+        base.SetParameters(); //Behaves as a regular bullet if no target is assigned;
+    }
+
+    public void Tracking() { //Function that makes it so that the projectiles follow the target;
         if(target != null) {
-            transform.up = target.position - transform.position;
+            transform.up = Vector3.Lerp(transform.up ,target.position - transform.position, rotationSpeed*Time.deltaTime);
         }
     }
 }
