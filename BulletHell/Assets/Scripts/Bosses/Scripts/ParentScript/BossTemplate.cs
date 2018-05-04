@@ -76,7 +76,6 @@ public class BossTemplate : MonoBehaviour
 
         if (attackTimer <= 0 && player != null)
         { //Checks if the attack timer hits 0;
-            print(transform);
             attackTimer = attackInterval; //Resets the timer;
             return true;
         }
