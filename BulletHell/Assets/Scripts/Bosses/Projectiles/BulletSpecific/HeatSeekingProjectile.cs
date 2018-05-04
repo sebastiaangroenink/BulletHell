@@ -42,9 +42,8 @@ public class HeatSeekingProjectile : ProjectileTemplate {
 
         if (target != null)
         {
-            Quaternion targetRot = Quaternion.LookRotation(target.position);
-            Vector3 rot = new Vector3(targetRot.eulerAngles.x, targetRot.eulerAngles.y, 0);
-            transform.eulerAngles = rot;
+            transform.right = target.position - transform.position;
+            transform.up = Vector3.Lerp(transform.up, target.position - transform.position, rotationSpeed * Time.deltaTime);
         }
     }
 }
