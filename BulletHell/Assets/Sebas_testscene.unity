@@ -142,15 +142,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72fdd23e4ffe934f9a1b9ae85660714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {x: 0, y: 0, z: 0}
+  playerPos: {x: 0, y: 0, z: 1}
   cam: {fileID: 1312509021}
   bulletTypes:
   - {fileID: 1699555290909296, guid: fcf840a6a97c96e43b6afe68f549043a, type: 2}
+  - {fileID: 1791079487204576, guid: 49eed96d8ae98494781671658b858456, type: 2}
+  - {fileID: 1792401854242326, guid: 03b58d02669262a4193ebb1babc82a2f, type: 2}
   - {fileID: 1699555290909296, guid: fcf840a6a97c96e43b6afe68f549043a, type: 2}
   - {fileID: 1699555290909296, guid: fcf840a6a97c96e43b6afe68f549043a, type: 2}
-  - {fileID: 1699555290909296, guid: fcf840a6a97c96e43b6afe68f549043a, type: 2}
-  - {fileID: 1699555290909296, guid: fcf840a6a97c96e43b6afe68f549043a, type: 2}
-  bulletType: 0
+  bulletType: 2
   maxBullets: 0
   volleyCount: 0
   bulletSpeed: 0
@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 196551008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -8.21, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
