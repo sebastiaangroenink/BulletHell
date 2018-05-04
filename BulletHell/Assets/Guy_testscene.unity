@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -304,78 +304,43 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4397400384842612, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
+    - target: {fileID: 4771451192496682, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4397400384842612, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
+    - target: {fileID: 4771451192496682, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
       propertyPath: m_LocalPosition.y
       value: 58.4
       objectReference: {fileID: 0}
-    - target: {fileID: 4397400384842612, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
+    - target: {fileID: 4771451192496682, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
       propertyPath: m_LocalPosition.z
       value: -3
       objectReference: {fileID: 0}
-    - target: {fileID: 4397400384842612, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
+    - target: {fileID: 4771451192496682, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4397400384842612, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
+    - target: {fileID: 4771451192496682, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4397400384842612, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
+    - target: {fileID: 4771451192496682, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4397400384842612, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
+    - target: {fileID: 4771451192496682, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4397400384842612, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
+    - target: {fileID: 4771451192496682, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114708277661372732, guid: 06b9fc768436ded4aac6e4e4696483d7,
+    - target: {fileID: 114478336240100720, guid: 06b9fc768436ded4aac6e4e4696483d7,
         type: 2}
       propertyPath: target
       value: 
       objectReference: {fileID: 2036912838}
-    - target: {fileID: 114708277661372732, guid: 06b9fc768436ded4aac6e4e4696483d7,
-        type: 2}
-      propertyPath: movementRadiusX
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 114708277661372732, guid: 06b9fc768436ded4aac6e4e4696483d7,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114708277661372732, guid: 06b9fc768436ded4aac6e4e4696483d7,
-        type: 2}
-      propertyPath: moveInterval
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114708277661372732, guid: 06b9fc768436ded4aac6e4e4696483d7,
-        type: 2}
-      propertyPath: attackInterval
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 114708277661372732, guid: 06b9fc768436ded4aac6e4e4696483d7,
-        type: 2}
-      propertyPath: starterPosition.y
-      value: 58.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114708277661372732, guid: 06b9fc768436ded4aac6e4e4696483d7,
-        type: 2}
-      propertyPath: targetLoc.x
-      value: -107.38338
-      objectReference: {fileID: 0}
-    - target: {fileID: 114708277661372732, guid: 06b9fc768436ded4aac6e4e4696483d7,
-        type: 2}
-      propertyPath: targetLoc.y
-      value: 57.96924
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06b9fc768436ded4aac6e4e4696483d7, type: 2}
   m_IsPrefabParent: 0

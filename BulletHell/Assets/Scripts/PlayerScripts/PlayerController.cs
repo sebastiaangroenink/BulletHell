@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray))
             {
-                playerPos = new Vector3(ray.origin.x, ray.origin.y, ray.origin.z + 1);
+                playerPos = new Vector3(ray.origin.x, ray.origin.y,1);
             }
         }
         //checks if player doesn't go out of bounds.

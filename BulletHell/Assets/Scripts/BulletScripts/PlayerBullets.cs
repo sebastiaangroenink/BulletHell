@@ -32,14 +32,23 @@ public class PlayerBullets : MonoBehaviour
         if (collision.transform.gameObject.tag == "Boss")
         {
             collision.transform.GetComponent<BossTemplate>().health -= damage;
-            player.GetComponent<PlayerController>().bulletsOnScreen--;
+
+            if (player != null)
+            {
+                player.GetComponent<PlayerController>().bulletsOnScreen--;
+            }
+
             Destroy(transform.gameObject);
 
         }
         if (collision.transform.gameObject.tag == "Wall")
         {
             Destroy(transform.gameObject);
-            player.GetComponent<PlayerController>().bulletsOnScreen--;
+
+            if (player != null)
+            {
+                player.GetComponent<PlayerController>().bulletsOnScreen--;
+            }
         }
     }
 }
