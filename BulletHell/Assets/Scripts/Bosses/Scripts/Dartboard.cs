@@ -9,6 +9,10 @@ public class Dartboard : BossTemplate {
     [Header("Big Dart Settings:")]
     public float bigdartTimerInterval = 20;
 
+    [Header("Small Dart Settings:")]
+    public float minVelocityDarts = 50;
+    public float maxVelocityDarts = 70;
+
     [Header("Angle Settings:")]
     public float angleAdjustment = 15;
 
@@ -24,6 +28,7 @@ public class Dartboard : BossTemplate {
         if (cooledDown) {
             GameObject projectile = Instantiate(projectiles[0].gameObject, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);    
             projectile.GetComponent<ProjectileTemplate>().forwardAxis = nextAngle;
+            projectile.GetComponent<ProjectileTemplate>().movementSpeed = Random.Range(minVelocityDarts, maxVelocityDarts);
             nextAngle += angleAdjustment;
         }
 
