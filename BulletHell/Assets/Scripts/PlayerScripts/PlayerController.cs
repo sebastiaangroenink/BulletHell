@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public int bulletDamage;
     public float bulletAngle;
     public int baseAngle;
-    public float bulletCooldown = 3.0f;
+    public float bulletCooldown = 1.0f;
 
     public int bulletsOnScreen;
 
@@ -91,10 +91,10 @@ public class PlayerController : MonoBehaviour
             case BulletType.One:
                 maxBullets = 20;
                 volleyCount = 5;
-                bulletSpeed = 30;
-                bulletDamage = 1;
-                bulletAngle = 22.5f;
-                baseAngle = -45;
+                bulletSpeed = 50;
+                bulletDamage = 2;
+                bulletAngle = 10.0f;
+                baseAngle = -20;
 
                 if(bulletsOnScreen <= maxBullets-volleyCount && bulletCooldown <0)
                 {
@@ -108,22 +108,51 @@ public class PlayerController : MonoBehaviour
                     }
                     bulletCooldown = 0.1f;
                 }
-
-
-
                 break;
 
             case BulletType.Two:
+                maxBullets = 14;
+                volleyCount = 2;
+                bulletSpeed = 45;
+                bulletDamage = 1;
+                bulletAngle = 0.0f;
+                baseAngle = 0;
 
-
-
-
+                if (bulletsOnScreen <= maxBullets - volleyCount && bulletCooldown < 0)
+                {
+                    for (int i = 0; i < volleyCount; i++)
+                    {
+                        GameObject bulletInstance;
+                        bulletInstance = Instantiate(bulletTypes[1], new Vector3(transform.position.x -0.5f + (1*i),transform.position.y,transform.position.z), new Quaternion(+baseAngle + (bulletAngle * i), 180, 0, 0)) as GameObject;
+                        bulletInstance.GetComponent<PlayerBullets>().damage = bulletDamage;
+                        bulletInstance.GetComponent<PlayerBullets>().speed = bulletSpeed;
+                        bulletsOnScreen++;
+                    }
+                    bulletCooldown = 0.05f;
+                }
 
                 break;
 
             case BulletType.Three:
+                maxBullets = 1;
+                volleyCount = 1;
+                bulletSpeed = 32;
+                bulletDamage = 15;
+                bulletAngle = 0.0f;
+                baseAngle = 0;
 
-
+                if (bulletsOnScreen <= maxBullets - volleyCount && bulletCooldown < 0)
+                {
+                    for (int i = 0; i < volleyCount; i++)
+                    {
+                        GameObject bulletInstance;
+                        bulletInstance = Instantiate(bulletTypes[2],transform.position, new Quaternion(0, 180, 0, 0)) as GameObject;
+                        bulletInstance.GetComponent<PlayerBullets>().damage = bulletDamage;
+                        bulletInstance.GetComponent<PlayerBullets>().speed = bulletSpeed;
+                        bulletsOnScreen++;
+                    }
+                    bulletCooldown = 0.3f;
+                }
 
 
 
