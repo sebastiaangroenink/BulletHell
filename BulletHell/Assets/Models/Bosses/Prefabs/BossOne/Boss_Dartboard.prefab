@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1000
   attackInterval: 0.03
-  moveInterval: 4
+  moveInterval: 3
   moveSpeed: 0.3
   starterPosition: {x: 0, y: 58.4}
   targetLoc: {x: -107.38338, y: 57.96924}
@@ -80,10 +80,11 @@ MonoBehaviour:
   projectiles:
   - {fileID: 114431744621944202, guid: e759def84156cb741856e47a84f1a1b9, type: 2}
   - {fileID: 114519092896415692, guid: 874e41af05662d145bd873dbe2ef8504, type: 2}
-  bigdartTimerInterval: 20
+  player: {fileID: 0}
+  bigdartTimerInterval: 10
   minVelocityDarts: 5
   maxVelocityDarts: 9
-  angleAdjustment: 15
+  angleAdjustment: 30
 --- !u!136 &136783310330826138
 CapsuleCollider:
   m_ObjectHideFlags: 1
