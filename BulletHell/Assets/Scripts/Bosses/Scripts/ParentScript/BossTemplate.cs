@@ -22,7 +22,7 @@ public class BossTemplate : MonoBehaviour
     [Header("Offense Settings:")]
     public List<ProjectileTemplate> projectiles; //Different types of projectile;
 
-    private GameObject player;
+    public GameObject player;
 
     #region Private Variables
     private float attackTimer = 0.5f; //Actual timer;
