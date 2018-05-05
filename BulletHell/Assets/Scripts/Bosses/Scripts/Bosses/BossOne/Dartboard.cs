@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Dartboard : BossTemplate {
 
-    public Transform target;
-
     [Header("Big Dart Settings:")]
     public float bigdartTimerInterval = 20;
 
@@ -48,7 +46,7 @@ public class Dartboard : BossTemplate {
         if (canshootBigdart) {
             GameObject bigProjectile = Instantiate(projectiles[1].gameObject, transform.position, Quaternion.identity);
             bigProjectile.GetComponent<HeatSeekingProjectile>().forwardAxis = nextAngle;
-            bigProjectile.GetComponent<HeatSeekingProjectile>().target = target;
+            bigProjectile.GetComponent<HeatSeekingProjectile>().target = GameObject.FindWithTag("Player").transform;
             nextAngle += angleAdjustment;
         }
     }
