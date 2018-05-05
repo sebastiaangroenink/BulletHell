@@ -14,7 +14,7 @@ public class PlayerBullets : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player_character");
     }
     private void Update()
     {
