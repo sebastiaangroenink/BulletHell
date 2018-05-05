@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-    /*Scales up the y Axis between 2 values for unprecident collision*/
+    /*Scales up the y Axis between 2 values for collision*/
 
 public class Trembling : ProjectileTemplate {
 
@@ -22,8 +22,7 @@ public class Trembling : ProjectileTemplate {
 
     public override void Update () { //Overwritten function due to adding data;
         base.Update();
-
         transform.localScale = startingScale; //Sets localscale to the futurely adjusted startingscale;
         startingScale.y = Mathf.Lerp(startingScale.y, Mathf.PingPong(Time.time * scalingSpeed, maxScale) + startingSizeY, scalingSpeed * Time.deltaTime);
-    }
+    } 
 }

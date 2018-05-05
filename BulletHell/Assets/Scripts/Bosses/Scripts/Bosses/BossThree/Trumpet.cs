@@ -6,22 +6,29 @@ public class Trumpet : BossTemplate {
 
     [Header("Trumpet Settings:")]
     public float shotTargetEventLength = 3; //Basetime of targetted event;
-    public float shotIntervalBase = 0.01f; //Time betwheen each bullet base;
-    public bool isTargetted = false;
     public float rotationSpeed = 4;
+    public float baseVelocity = 10;
+
+
+    [Header("Regular Attack Settings:")]
+    public float minVelocity = 10;
+    public float maxVelocity = 15;
+    public int maxProjectiles = 20;
+    public int burstAmount = 8;
+    public float shotIntervalBase = 0.01f; //Time betwheen each bullet base;
 
     #region Private Variables
     private int amountShot = 0;
-    private float shotTimer; //Time between each bullet when targetted;
     private float shotInterval; //Time of target event;
-    private bool patternSwitch;
+    private float velocityChange;
+    private float multiplier = 1;
     #endregion
 
     public override void Start() {
         base.Start();
 
         shotInterval = shotIntervalBase;
-        shotTimer = shotTargetEventLength;
+        velocityChange = baseVelocity;
     }
 
     public override void Update() {
@@ -40,57 +47,33 @@ public class Trumpet : BossTemplate {
     public override void BaseAttack() { //Inherited base attack function;
         base.BaseAttack();
 
-        if (cooledDown && isTargetted == false) {
-            GameObject projectile = Instantiate(projectiles[0].gameObject, transform.position, Quaternion.identity);
-            projectile.GetComponent<ProjectileTemplate>().forwardAxis = 180;
-            projectile.GetComponent<ProjectileTemplate>().movementSpeed = 5;
-        }
+        ActivateBurstFire();
 
-        if (isTargetted == true) {
-            ActivateTargetedFire();
-
+        if (cooledDown) 
+        {
+            for (int i = 0; i < maxProjectiles; i++) {
+                GameObject projectile = Instantiate(projectiles[0].gameObject, transform.position, Quaternion.identity);
+                projectile.GetComponent<ProjectileTemplate>().forwardAxis = 360 / maxProjectiles * (i * multiplier + Random.Range(10f, 15f));
+                projectile.GetComponent<ProjectileTemplate>().movementSpeed = Random.Range(minVelocity, maxVelocity);
+            }
 
         }
     }
 
-    public void ActivateTargetedFire() {
-            shotTimer -= Time.deltaTime;
+    public void ActivateBurstFire() {
             shotInterval -= Time.deltaTime;
 
-            if (shotTimer > 0) {
             if (shotInterval <= 0) {
 
-     if (patternSwitch == true) {
-                for (int i = 0; i < 8; i++) {
+                for (int i = 0; i < burstAmount; i++) 
+                {
 
-
-                        GameObject projectile = Instantiate(projectiles[0].gameObject, transform.position, Quaternion.identity);
+                        GameObject projectile = Instantiate(projectiles[1].gameObject, transform.position, Quaternion.identity);
                         projectile.GetComponent<ProjectileTemplate>().forwardAxis = transform.eulerAngles.z + 90 - (22.5f * i);
-                        projectile.GetComponent<ProjectileTemplate>().movementSpeed = 10;
-                        shotInterval = shotIntervalBase;
-                        patternSwitch = false;
-                        break;
-                    }
-
-     }
-
-            if (patternSwitch == false) {
-                for (int i = 0; i < 4; i++) {
-
-                        GameObject projectile = Instantiate(projectiles[0].gameObject, transform.position, Quaternion.identity);
-                        projectile.GetComponent<ProjectileTemplate>().forwardAxis = transform.eulerAngles.z + 90 - (11.25f * i);
-                        projectile.GetComponent<ProjectileTemplate>().movementSpeed = 10;
-                        shotInterval = shotIntervalBase;
-                        patternSwitch = true;
-                        break;
-                      
-                    }
-                }
+                        projectile.GetComponent<ProjectileTemplate>().movementSpeed = baseVelocity + (2 * i);
             }
-        }
-            else {
-            shotTimer = shotTargetEventLength;
-            isTargetted = false;
-        }
-    }
-}
+
+            shotInterval = shotIntervalBase;
+             }
+          }
+       }
