@@ -9,12 +9,10 @@ public class Bending : ProjectileTemplate {
     public float bendTime = 3;
 
     #region Private Variables
-    private float timer;
     #endregion
 
     public override void Start() {
         base.Start();
-        timer = bendTime;
     }
 
     public override void SetParameters () {

@@ -18,9 +18,7 @@ public class Trumpet : BossTemplate {
     public float shotIntervalBase = 0.01f; //Time betwheen each bullet base;
 
     #region Private Variables
-    private int amountShot = 0;
     private float shotInterval; //Time of target event;
-    private float velocityChange;
     private float multiplier = 1;
     #endregion
 
@@ -28,7 +26,6 @@ public class Trumpet : BossTemplate {
         base.Start();
 
         shotInterval = shotIntervalBase;
-        velocityChange = baseVelocity;
     }
 
     public override void Update() {
@@ -41,7 +38,6 @@ public class Trumpet : BossTemplate {
         {
             Vector2 direction = GameObject.FindWithTag("Player").transform.position - transform.position;
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            Quaternion rot = Quaternion.AngleAxis(targetAngle, Vector3.back);
             Quaternion finalRot = Quaternion.AngleAxis(targetAngle, new Vector3(0, 0, 1));
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(finalRot.eulerAngles.x, finalRot.eulerAngles.y, finalRot.eulerAngles.z - 90), rotationSpeed * Time.deltaTime);
         }
