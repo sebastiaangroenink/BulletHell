@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 54016556442437010}
   - component: {fileID: 114736332473974340}
   m_Layer: 0
-  m_Name: Boss_Skelehand
+  m_Name: Boss_6
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0abacd74716374cbec4c1c852d5d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 620
+  health: 2000
   attackInterval: 0.4
   moveInterval: 3
   moveSpeed: 1.5
@@ -234,8 +234,8 @@ MonoBehaviour:
     type: 2}
   starterPosition: {x: 0.8, y: 8.82}
   targetLoc: {x: -3.9084935, y: 6.927325}
-  movementRadiusX: 5
-  movementRadiusY: 2
+  movementRadiusX: 14
+  movementRadiusY: 0
   projectiles:
   - {fileID: 114054319397887488, guid: 6c3cf6f4a5d4c344facc2d476b7c9e0f, type: 2}
   - {fileID: 114661324950087302, guid: b1a0f8bc999c1d24db5700047d8ed984, type: 2}

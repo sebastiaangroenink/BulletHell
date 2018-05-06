@@ -23,6 +23,7 @@ public class BeeBoss : BossTemplate
     {
         base.Start();
 
+        bossSevenWalls = GameObject.Find("Boss_7_Walls");
         bossSevenWalls.SetActive(true);
     }
 
