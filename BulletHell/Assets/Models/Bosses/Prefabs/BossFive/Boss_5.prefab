@@ -161,6 +161,8 @@ MonoBehaviour:
   attackInterval: 0.015
   moveInterval: 9999999
   moveSpeed: 0
+  deathParticle: {fileID: 1321828680121584, guid: e86ce0b7884d0cd4a854074dc672bc1a,
+    type: 2}
   starterPosition: {x: 0, y: 0}
   targetLoc: {x: 0, y: 0}
   movementRadiusX: 0
