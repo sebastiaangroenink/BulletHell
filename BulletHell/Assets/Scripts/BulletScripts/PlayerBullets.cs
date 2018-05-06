@@ -10,7 +10,7 @@ public class PlayerBullets : MonoBehaviour
     public float safetyDecay = 5.0f;
 
     public GameObject player;
-
+    public GameObject hitParticle;
 
     private void Awake()
     {
@@ -32,6 +32,7 @@ public class PlayerBullets : MonoBehaviour
         if (collision.transform.gameObject.tag == "Boss")
         {
             collision.transform.GetComponent<BossTemplate>().health -= damage;
+            Instantiate(hitParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z - 10), Quaternion.identity);
 
             if (player != null)
             {
