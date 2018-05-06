@@ -44,7 +44,6 @@ public class HeatSeekingProjectile : ProjectileTemplate {
         {
             Vector2 direction = target.position -transform.position;
             float targetAngle = Mathf.Atan2(direction.y , direction.x) * Mathf.Rad2Deg;
-            Quaternion rot = Quaternion.AngleAxis(targetAngle, Vector3.back);
             Quaternion finalRot = Quaternion.AngleAxis(targetAngle, new Vector3(0, 0, 1));
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(finalRot.eulerAngles.x, finalRot.eulerAngles.y, finalRot.eulerAngles.z -90),  rotationSpeed * Time.deltaTime);
         }
