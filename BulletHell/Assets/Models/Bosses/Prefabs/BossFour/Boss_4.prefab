@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54540081623423466}
   - component: {fileID: 114685562534560784}
   m_Layer: 0
-  m_Name: Boss_Vulcano
+  m_Name: Boss_4
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

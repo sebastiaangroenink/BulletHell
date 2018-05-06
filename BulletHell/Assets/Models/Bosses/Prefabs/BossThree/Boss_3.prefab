@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136943387152967916}
   - component: {fileID: 114383446799433756}
   m_Layer: 0
-  m_Name: Boss_Trumpet
+  m_Name: Boss_3
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1161539097070676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.467436, y: 6.3524017, z: 1.5}
-  m_LocalScale: {x: 2.7462664, y: 2.7462676, z: 2.7462676}
+  m_LocalPosition: {x: 0, y: 7.5, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
