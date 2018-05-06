@@ -66,12 +66,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardAxis: 0
-  movementSpeed: 12
+  movementSpeed: 9
   rotation: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
   baseTrackingTimer: 10
-  minRotspeed: 4
-  maxRotspeed: 5
+  minRotspeed: 10
+  maxRotspeed: 12
 --- !u!212 &212196311677905130
 SpriteRenderer:
   m_ObjectHideFlags: 1

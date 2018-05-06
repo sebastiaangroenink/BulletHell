@@ -83,13 +83,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2500
   attackInterval: 0.5
-  moveInterval: 6
-  moveSpeed: 2
+  moveInterval: 3
+  moveSpeed: 1.5
   starterPosition: {x: 0, y: 0}
   targetLoc: {x: 0, y: 0}
-  movementRadiusX: 25
+  movementRadiusX: 15
   movementRadiusY: 0
-  projectiles: []
+  projectiles:
+  - {fileID: 114157139628734162, guid: c8be191fa1951014eb745777d1566780, type: 2}
+  - {fileID: 114232990990010292, guid: a7170473b65ecc24891caf4e1ae00774, type: 2}
+  player: {fileID: 0}
+  baseAttackSwitch: 0
+  circleBurst: 2
 --- !u!212 &212997287200003974
 SpriteRenderer:
   m_ObjectHideFlags: 1
