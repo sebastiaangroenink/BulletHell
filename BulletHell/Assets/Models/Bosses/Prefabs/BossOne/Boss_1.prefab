@@ -9,75 +9,101 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1029384092592762}
+  m_RootGameObject: {fileID: 1443152924535850}
   m_IsPrefabParent: 1
---- !u!1 &1029384092592762
+--- !u!1 &1443152924535850
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4672416705063954}
-  - component: {fileID: 212196311677905130}
-  - component: {fileID: 114519092896415692}
-  - component: {fileID: 65382276038486252}
+  - component: {fileID: 4658479380180680}
+  - component: {fileID: 212913197613653408}
+  - component: {fileID: 114307831040540090}
+  - component: {fileID: 54785492089675588}
+  - component: {fileID: 136783310330826138}
   m_Layer: 0
-  m_Name: Dart_Heatseaking
-  m_TagString: Untagged
+  m_Name: Boss_1
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4672416705063954
+--- !u!4 &4658479380180680
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1029384092592762}
+  m_GameObject: {fileID: 1443152924535850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26247573, y: 4.896013, z: -35.816406}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 8.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65382276038486252
-BoxCollider:
+--- !u!54 &54785492089675588
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1029384092592762}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_GameObject: {fileID: 1443152924535850}
   serializedVersion: 2
-  m_Size: {x: 1, y: 5, z: 1}
-  m_Center: {x: 0, y: 10, z: 0}
---- !u!114 &114519092896415692
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114307831040540090
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1029384092592762}
+  m_GameObject: {fileID: 1443152924535850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e06028d35b77e40a59d4e345f2cb17, type: 3}
+  m_Script: {fileID: 11500000, guid: 93da888da7464c545b1a53ad4be9be99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardAxis: 0
-  movementSpeed: 9
-  rotation: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
-  baseTrackingTimer: 5
-  minRotspeed: 10
-  maxRotspeed: 12
---- !u!212 &212196311677905130
+  health: 1000
+  attackInterval: 0.03
+  moveInterval: 3
+  moveSpeed: 0.3
+  starterPosition: {x: 0, y: 58.4}
+  targetLoc: {x: -107.38338, y: 57.96924}
+  movementRadiusX: 19
+  movementRadiusY: 1.5
+  projectiles:
+  - {fileID: 114431744621944202, guid: e759def84156cb741856e47a84f1a1b9, type: 2}
+  - {fileID: 114519092896415692, guid: 874e41af05662d145bd873dbe2ef8504, type: 2}
+  player: {fileID: 0}
+  bigdartTimerInterval: 10
+  minVelocityDarts: 5
+  maxVelocityDarts: 9
+  angleAdjustment: 30
+--- !u!136 &136783310330826138
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443152924535850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.5
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!212 &212913197613653408
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1029384092592762}
+  m_GameObject: {fileID: 1443152924535850}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -105,8 +131,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05785f5937aa46640b4403eb1b95870c, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 51532634ab133934984e5e1924d75fe2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
