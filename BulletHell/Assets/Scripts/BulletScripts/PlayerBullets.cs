@@ -8,6 +8,7 @@ public class PlayerBullets : MonoBehaviour
     public float damage;
     public float speed = 1.0f;
     public float safetyDecay = 5.0f;
+    public float hitmarketDecay = 2.0f;
 
     public GameObject player;
     public GameObject hitParticle;
