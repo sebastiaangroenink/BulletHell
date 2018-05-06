@@ -13,6 +13,9 @@ public class BossTemplate : MonoBehaviour
     public float moveInterval = 3f; //Used for randomizing position;
     public float moveSpeed = 1.5f;
 
+    [Header("Death Settings:")]
+    public GameObject deathParticle;
+
     [Header("Trivial Info:")]
     public Vector2 starterPosition; //Stored initial position saved for movement purposes;
     public Vector2 targetLoc; //Location to move towards;
@@ -22,9 +25,10 @@ public class BossTemplate : MonoBehaviour
     [Header("Offense Settings:")]
     public List<ProjectileTemplate> projectiles; //Different types of projectile;
 
+    #region Private Variables
+    [HideInInspector]
     public GameObject player;
 
-    #region Private Variables
     private float attackTimer = 0.5f; //Actual timer;
     private float moveTimer = 0;
     protected bool cooledDown;
@@ -51,6 +55,14 @@ public class BossTemplate : MonoBehaviour
 
         Move();
         DecideNextLocation();
+        Death();
+    }
+
+    public virtual void Death() {
+        if (health <= 0) {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 
     public void Move()
