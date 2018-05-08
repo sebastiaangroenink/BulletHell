@@ -37,7 +37,7 @@ public class BeeBoss : BossTemplate
         if (health >= 1750 &&burstTimer <0)
         {
             PhaseOne();
-            burstTimer = 5f;
+            burstTimer = 1.5f;
         }
         if(health <= 1750 && health >= 1000)
         {
@@ -54,7 +54,7 @@ public class BeeBoss : BossTemplate
     void PhaseOne()
     {
             GameObject explosiveShot = Instantiate(projectiles[0].gameObject, transform.position, Quaternion.identity);
-            explosiveShot.GetComponent<ProjectileTemplate>().movementSpeed = 8.0f;
+            explosiveShot.GetComponent<ProjectileTemplate>().movementSpeed = 13.0f;
             explosiveShot.GetComponent<ProjectileTemplate>().forwardAxis = 180;
     }
 
@@ -64,9 +64,9 @@ public class BeeBoss : BossTemplate
         {
             GameObject explosiveShotBurstLeft = Instantiate(projectiles[1].gameObject, transform.position, Quaternion.identity);
             explosiveShotBurstLeft.GetComponent<ProjectileTemplate>().movementSpeed = 8.0f;
-            explosiveShotBurstLeft.GetComponent<ProjectileTemplate>().forwardAxis = 0 + 4 * phaseTwoSpawned;
+            explosiveShotBurstLeft.GetComponent<ProjectileTemplate>().forwardAxis = 0 + 6 * phaseTwoSpawned;
 
-            phaseTwoSpawnTimer = 0.01f;
+            phaseTwoSpawnTimer = 0.001f;
             phaseTwoSpawned++;
         }
     }
