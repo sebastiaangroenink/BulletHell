@@ -66,7 +66,7 @@ public class BeeBoss : BossTemplate
             explosiveShotBurstLeft.GetComponent<ProjectileTemplate>().movementSpeed = 8.0f;
             explosiveShotBurstLeft.GetComponent<ProjectileTemplate>().forwardAxis = 0 + 6 * phaseTwoSpawned;
 
-            phaseTwoSpawnTimer = 0.001f;
+            phaseTwoSpawnTimer = 0.02f;
             phaseTwoSpawned++;
         }
     }
